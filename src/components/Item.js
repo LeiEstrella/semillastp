@@ -9,14 +9,14 @@ const Item = ({ pro }) => {
 
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={"../../" + pro.img} />
+      <Card.Img variant="top" src={pro.img} />
       <Card.Body>
-        <Card.Title>{pro.titulo}</Card.Title>
-        <Card.Text>{pro.descripcion}
+        <Card.Title>{pro.name}</Card.Title>
+        <Card.Text>{pro.description}
         </Card.Text>
-        <Card.Text>Precio:${pro.precio}
+        <Card.Text>Precio:${pro.price}
         </Card.Text>
-        <Button variant="primary" onClick={() => clickComprar(pro.id)}>Comprar</Button>
+        <Button variant="primary" onClick={() => clickComprar(pro.id)}>Ver detalles</Button>
       </Card.Body>
     </Card>);
 

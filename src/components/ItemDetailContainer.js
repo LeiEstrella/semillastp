@@ -3,25 +3,23 @@ import { db } from '../services';
 import { useParams } from 'react-router-dom';
 import { Container } from "react-bootstrap";
 import ItemDetail from "./ItemDetail"
+import { getDoc, doc } from 'firebase/firestore';
 
 const ItemDetailContainer = (props) => {
-    let [pro, setPro] = useState({})
     let [productos, setProductos] = useState([])
     let { id } = useParams();
 
     useEffect(() => {
-
-        setProductos(db);
-        let found = db.filter(x => x.id === id)
-        setPro(found[0])
-
-        //console.log(response);
-
+        const docRef = doc(db, "products", id)
+        getDoc(docRef).then(doc =>{
+            console.log(doc)
+            const productFormatted = { id: doc.id, ...doc.data()}
+            setProductos(productFormatted)
+        })
     }, [])
-
     return (
         <Container fluid>
-            <ItemDetail pro={pro}></ItemDetail>
+            <ItemDetail product={productos}></ItemDetail>
         </Container>
     );
 }

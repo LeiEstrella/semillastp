@@ -1,19 +1,19 @@
 const productos = [
 
     {
-        "id": "semilla1",
-        "titulo": "Semilla de chia",
-        "descripcion": "Descripcion Semilla de chia",
-        "img": "imagenes/chia.png",
-        "precio": 100,
-        "origen": "nacional",
-        "cantidad": 6
+        id: "semilla1",
+        titulo: "Semilla de chia",
+        descripcion: "Descripcion Semilla de chia",
+        img: "imagenes/chia.png",
+        precio: 100,
+        origen: "nacional",
+        cantidad: 6
     }, {
-        "id": "semilla2",
-        "titulo": "Semilla de Sesamo",
-        "descripcion": "Descripcion Semilla de Sesamo",
-        "img": "imagenes/sesamo.png",
-        "precio": 200,
+        id: "semilla2",
+        titulo: "Semilla de Sesamo",
+        descripcion: "Descripcion Semilla de Sesamo",
+        img: "imagenes/sesamo.png",
+        precio: 200,
         "origen": "nacional",
         "cantidad": 7
     }, {

@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React  from 'react';
 import { useState, useContext } from 'react'
 import { Card } from "react-bootstrap";
 import ItemCount from './ItemCount';
 import CartContext from './Context/CartContext'
 
-const ItemDetail = ({ pro }) => {
+const ItemDetail = ({ product }) => {
   const [quantityAdded, setQuantityAdded] = useState(0)
 
   const { addItem } = useContext(CartContext)
@@ -12,27 +12,21 @@ const ItemDetail = ({ pro }) => {
   const handleOnAdd = (quantity) => {
 
     setQuantityAdded(quantity)
-    pro.cantidad = quantity
-    addItem(pro)
+    product.cantidad = quantity
+    addItem(product)
   }
-
-  useEffect(() => {
-    // console.log(pro);
-
-  }, [])
-
-
+  console.log(product)
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={"../../" + pro.img} />
+      <Card.Img variant="top" src={product.img} />
       <Card.Body>
-        <Card.Title>{pro.titulo}</Card.Title>
-        <Card.Text>{pro.descripcion}
+        <Card.Title>{product.name}</Card.Title>
+        <Card.Text>{product.description}
         </Card.Text>
-        <Card.Text>Precio:${pro.precio}
+        <Card.Text>Precio:${product.price}
         </Card.Text>
       </Card.Body>
-      <ItemCount stock={pro.cantidad} onAdd={handleOnAdd} />
+      <ItemCount stock={product.stock} onAdd={handleOnAdd} />
     </Card>);
 
 }
